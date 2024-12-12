@@ -1,0 +1,140 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  animation: normal__anim 5s infinite alternate ease-in-out;
+  filter: contrast(150%), saturate(200%);
+}
+
+@keyframes normal__anim {
+  0% {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  }
+  50% {
+    background: linear-gradient(135deg, #fbc2eb, #ff9a9e);
+  }
+  100% {
+    background: linear-gradient(135deg, #ff9a9e, #a18cd1);
+  }
+}
+@keyframes wrong__anim {
+  0%, 100% {
+    background: linear-gradient(135deg, #960000, #FF6464);
+  }
+  50% {
+    background: linear-gradient(135deg, #96003C, #FF64C8);
+  }
+}
+@keyframes smaller__anim {
+  0%, 100% {
+    background: linear-gradient(135deg, #3498db, #85c1e9);
+  }
+  50% {
+    background: linear-gradient(135deg, #2980b9, #5dade2);
+  }
+}
+@keyframes bigger__anim {
+  0%, 100% {
+    background: linear-gradient(135deg, #FF9800, #FF5722);
+  }
+  50% {
+    background: linear-gradient(135deg, #FFA726, #FF7043);
+  }
+}
+@keyframes correct__anim {
+  0%, 100% {
+    background: linear-gradient(135deg, #009600, #64FF64);
+  }
+  50% {
+    background: linear-gradient(135deg, #00963C, #64FFC8);
+  }
+}
+
+.container {
+  text-align: center;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.input {
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+  background: transparent;
+  color: #fff;
+  &::placeholder {
+    color: #fbfbfb;
+  }
+  &:focus {
+    border-color: #7f5cd1;
+  }
+}
+
+.button {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  color: white;
+  background-color: #7f5cd1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: #4839c7;
+}
+
+.screen {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+.wrong {
+  animation-name: wrong__anim;
+}
+.wrong > .container > .form > .input {
+  border-color: #f00;
+}
+.wrong > .container > .form > .button {
+  background-color: #f00;
+}
+.correct {
+  animation-name: correct__anim;
+}
+.correct > .container > .form > .input {
+  border-color: #0f0;
+}
+.correct > .container > .form > .button {
+  background-color: #0f0;
+}
+.smaller {
+  animation-name: smaller__anim;
+}
+.smaller > .container > .form > .input {
+  border-color: #4444FE;
+}
+.smaller > .container > .form > .button {
+  background-color: #4444FE;
+}
+.bigger {
+  animation-name: bigger__anim;
+}
+.bigger > .container {
+  color: #000;
+}
+.bigger > .container > .form > .input {
+  border-color: #FF6F00;
+}
+.bigger > .container > .form > .button {
+  background-color: #FF6F00;
+}
